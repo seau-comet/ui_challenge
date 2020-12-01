@@ -49,10 +49,6 @@ class _FlipTrekkingState extends State<FlipTrekking> {
                     SizedBox(
                       height: 16,
                     ),
-                    buildSeats(),
-                    SizedBox(
-                      height: 16,
-                    ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 32),
@@ -126,7 +122,7 @@ class _FlipTrekkingState extends State<FlipTrekking> {
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
         children: List.generate(
-          50,
+          100,
           (int index) {
             return AnimationConfiguration.staggeredGrid(
               position: index,
@@ -143,8 +139,8 @@ class _FlipTrekkingState extends State<FlipTrekking> {
                     int temp = index ~/ 10;
 
                     rowSeats.add(temp);
-                    var test = rowSeats.toSet();
-                    print(test);
+                    rowSeats = rowSeats.toSet().toList();
+                    print(rowSeats);
 
                     bookSeats.add(currentSeat);
                     setState(() {});
