@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:simple_tooltip/simple_tooltip.dart';
 import 'dart:math';
 
 import 'flip_enter.dart';
 
-class FlipTrekking extends StatelessWidget {
+class FlipTrekking extends StatefulWidget {
   FlipTrekking({
     Key key,
     @required AnimationController controller,
@@ -15,18 +16,33 @@ class FlipTrekking extends StatelessWidget {
   final String image;
 
   @override
+  _FlipTrekkingState createState() => _FlipTrekkingState();
+}
+
+class _FlipTrekkingState extends State<FlipTrekking> {
+  int currentSeat;
+  List<int> bookSeats = [];
+  List<int> rowSeats = [];
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Test"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      extendBodyBehindAppBar: true,
       backgroundColor: Color(0xFFE1F0F4),
       body: AnimatedBuilder(
-          animation: animation.controller,
+          animation: widget.animation.controller,
           builder: (context, child) => Container(
                 color: Color(0xFF382e63),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
-                      height: 32,
+                      height: 64,
                     ),
                     buildScreen(context),
                     buildSeats(),
@@ -52,7 +68,7 @@ class FlipTrekking extends StatelessWidget {
                               height: 8,
                             ),
                             Text(
-                              "Row 9, Seats 10, 11",
+                              "Row ${rowSeats.join(",")}, Seats ${bookSeats.join(",")}",
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white,
@@ -65,7 +81,7 @@ class FlipTrekking extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                  "Total: \$5",
+                                  "Total: \$${bookSeats.length * 5}",
                                   style: TextStyle(
                                       fontSize: 24,
                                       color: Colors.red,
@@ -118,14 +134,48 @@ class FlipTrekking extends StatelessWidget {
               duration: const Duration(milliseconds: 375),
               columnCount: 10,
               child: SlideAnimation(
-                verticalOffset: 50.0,
-                child: FadeInAnimation(
-                  child: InkWell(
-                    onTap: () {
-                      print(index);
+                verticalOffset: 200.0,
+                duration: Duration(milliseconds: 500),
+                child: InkWell(
+                  onTap: () {
+                    print(index);
+                    this.currentSeat = index;
+                    int temp = index ~/ 10;
+
+                    rowSeats.add(temp);
+                    var test = rowSeats.toSet();
+                    print(test);
+
+                    bookSeats.add(currentSeat);
+                    setState(() {});
+                    Future.delayed(Duration(seconds: 1), () {
+                      setState(() {
+                        this.currentSeat = null;
+                      });
+                    });
+                  },
+                  child: SimpleTooltip(
+                    content: Text(
+                      index.toString(),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
+                    tooltipDirection: TooltipDirection.up,
+                    animationDuration: Duration(seconds: 1),
+                    tooltipTap: () {
+                      print("Tooltip tap");
+                      setState(() {
+                        currentSeat = null;
+                      });
                     },
+                    show: currentSeat == index ? true : false,
                     child: Container(
-                      color: Colors.lightBlue.shade50,
+                      color: bookSeats.contains(index)
+                          ? Colors.blue
+                          : Colors.lightBlue.shade50,
                     ),
                   ),
                 ),
@@ -146,10 +196,10 @@ class FlipTrekking extends StatelessWidget {
           alignment: FractionalOffset.center,
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.002)
-            ..rotateX((pi * animation.barHeight.value - 2.1)),
+            ..rotateX((pi * widget.animation.barHeight.value - 2.1)),
           child: Container(
             child: Image.asset(
-              image,
+              widget.image,
               width: MediaQuery.of(context).size.width * .7,
               height: 200,
               color: Colors.white38,
@@ -168,51 +218,6 @@ class FlipTrekking extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildAnimation(BuildContext context, Widget child, Size size) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 150,
-            child: Stack(
-              overflow: Overflow.visible,
-              children: <Widget>[
-                topBar(animation.barHeight.value),
-                circle(
-                  size,
-                  animation.avatarSize.value,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: 50),
-                Opacity(
-                  opacity: animation.titleOpacity.value,
-                  child: placeholderBox(28, 150, Alignment.centerLeft),
-                ),
-                SizedBox(height: 6),
-                Opacity(
-                  opacity: animation.textOpacity.value,
-                  child: placeholderBox1(
-                      250, double.infinity, Alignment.centerLeft),
-                ),
-                SizedBox(height: 6),
-                Opacity(
-                  opacity: animation.imageOpacity.value,
-                  child: placeholderBox2(Alignment.center),
-                ),
-              ],
-            ),
-          )
-        ],
       ),
     );
   }
