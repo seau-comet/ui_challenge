@@ -149,976 +149,7 @@ class _DetailPageState extends State<DetailPage> {
         SizedBox(
           height: 20,
         ),
-        Container(
-          padding: EdgeInsets.all(10),
-          width: MediaQuery.of(context).size.width,
-          height: 320,
-          child: ListView(
-            padding: EdgeInsets.all(8),
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width * .85,
-                padding: EdgeInsets.all(4),
-                color: Color(0xFF42396e),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ListTile(
-                      title: Text(
-                        "Tomorrow",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text(
-                        "25 Mar",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white54,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {
-                                    //animation out
-
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                            builder: (context) => FlipAnimation(
-                                                  image: widget.image,
-                                                )));
-                                  },
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 14,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 14,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * .85,
-                padding: EdgeInsets.all(4),
-                color: Color(0xFF42396e),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ListTile(
-                      title: Text(
-                        "Tomorrow",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text(
-                        "25 Mar",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white54,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 14,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 14,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * .85,
-                padding: EdgeInsets.all(4),
-                color: Color(0xFF42396e),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ListTile(
-                      title: Text(
-                        "Tomorrow",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text(
-                        "25 Mar",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white54,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 14,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 14,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Expanded(
-                                child: OutlineButton(
-                                  padding: EdgeInsets.all(8),
-                                  onPressed: () {},
-                                  borderSide: BorderSide(color: Colors.white24),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "10:00am",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "IMAX",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFffc919),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        buildCards(context),
         Container(
           padding: EdgeInsets.all(16),
           width: MediaQuery.of(context).size.width,
@@ -1142,6 +173,111 @@ class _DetailPageState extends State<DetailPage> {
           ),
         )
       ],
+    );
+  }
+
+  Container buildCards(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      width: MediaQuery.of(context).size.width,
+      height: 320,
+      child: ListView(
+        padding: EdgeInsets.all(8),
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          buildCard(context),
+          SizedBox(
+            width: 8,
+          ),
+          buildCard(context),
+          SizedBox(
+            width: 8,
+          ),
+          buildCard(context),
+        ],
+      ),
+    );
+  }
+
+  Card buildCard(BuildContext context) {
+    return Card(
+      color: Color(0xFF42396e),
+      elevation: 5,
+      child: Container(
+        width: MediaQuery.of(context).size.width * .85,
+        padding: EdgeInsets.all(0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ListTile(
+              title: Text(
+                "Tomorrow",
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "25 Mar",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white54,
+                ),
+              ),
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 3,
+                shrinkWrap: true,
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                childAspectRatio: (6 / 3),
+                controller: new ScrollController(keepScrollOffset: false),
+                physics: NeverScrollableScrollPhysics(),
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                children: List.generate(
+                  9,
+                  (index) => OutlineButton(
+                    padding: EdgeInsets.all(8),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return FlipAnimation(
+                            image: widget.image,
+                          );
+                        },
+                      ));
+                    },
+                    borderSide: BorderSide(color: Colors.white24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "10:00am",
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "IMAX",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Color(0xFFffc919),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            )
+          ],
+        ),
+      ),
     );
   }
 
