@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'dart:math';
 
 import 'flip_enter.dart';
@@ -18,59 +19,155 @@ class FlipTrekking extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFE1F0F4),
       body: AnimatedBuilder(
-        animation: animation.controller,
-        builder: (context, child) => Scaffold(
-            body: Container(
-          color: Color(0xFF382e63),
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverToBoxAdapter(
-                child: Container(
-                  alignment: Alignment.topCenter,
-                  child: Hero(
-                    tag: "movie",
-                    child: Transform(
-                      alignment: FractionalOffset.center,
-                      transform: Matrix4.identity()
-                        ..setEntry(3, 2, 0.002)
-                        ..rotateX((pi * animation.barHeight.value - 2.1)),
-                      child: GestureDetector(
-                        onTap: () {
-                          if (animation.controller.status ==
-                              AnimationStatus.dismissed) {
-                            animation.controller.forward();
-                          } else {
-                            animation.controller.reverse();
-                          }
-                        },
-                        child: Container(
-                          child: Image.asset(
-                            image,
-                            width: MediaQuery.of(context).size.width * .7,
-                            height: 200,
-                            color: Colors.white38,
-                            colorBlendMode: BlendMode.overlay,
-                            fit: BoxFit.cover,
-                            // color: Color(0xFF42396e),
-                          ),
-                          decoration: BoxDecoration(
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                  spreadRadius: 30,
-                                  color: Color(0xFF423988),
-                                  blurRadius: 100.0,
-                                  offset: Offset(0.0, 200))
-                            ],
-                          ),
+          animation: animation.controller,
+          builder: (context, child) => Container(
+                color: Color(0xFF382e63),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 32,
+                    ),
+                    buildScreen(context),
+                    buildSeats(),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    buildSeats(),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Session 9.30, 24 NOV 2020",
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              "Row 9, Seats 10, 11",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Divider(
+                              height: 40,
+                              color: Colors.lightBlue.shade50,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Total: \$5",
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  " or 45000 bonuses",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
+                    SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        // height: double.infinity,
+                        child: RaisedButton(
+                          color: Colors.red,
+                          child: Text(
+                            "CHECK OUT",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onPressed: () {},
+                        ))
+                  ],
+                ),
+              )),
+    );
+  }
+
+  AnimationLimiter buildSeats({Duration duration}) {
+    return AnimationLimiter(
+      child: GridView.count(
+        shrinkWrap: true,
+        primary: false,
+        padding: EdgeInsets.symmetric(horizontal: 32),
+        crossAxisCount: 10,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        children: List.generate(
+          50,
+          (int index) {
+            return AnimationConfiguration.staggeredGrid(
+              position: index,
+              delay: duration,
+              duration: const Duration(milliseconds: 375),
+              columnCount: 10,
+              child: SlideAnimation(
+                verticalOffset: 50.0,
+                child: FadeInAnimation(
+                  child: InkWell(
+                    onTap: () {
+                      print(index);
+                    },
+                    child: Container(
+                      color: Colors.lightBlue.shade50,
+                    ),
                   ),
                 ),
-              )
-            ],
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Container buildScreen(BuildContext context) {
+    return Container(
+      alignment: Alignment.topCenter,
+      child: Hero(
+        tag: "movie",
+        child: Transform(
+          alignment: FractionalOffset.center,
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.002)
+            ..rotateX((pi * animation.barHeight.value - 2.1)),
+          child: Container(
+            child: Image.asset(
+              image,
+              width: MediaQuery.of(context).size.width * .7,
+              height: 200,
+              color: Colors.white38,
+              colorBlendMode: BlendMode.overlay,
+              fit: BoxFit.cover,
+              // color: Color(0xFF42396e),
+            ),
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    spreadRadius: 20,
+                    color: Color(0xFF423988),
+                    blurRadius: 100.0,
+                    offset: Offset(0.0, 200))
+              ],
+            ),
           ),
-        )),
+        ),
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_theater/flip/flip_animation.dart';
-import 'package:movie_theater/flip_card.dart';
 
 class DetailPage extends StatefulWidget {
   DetailPage({Key key, this.title, this.image}) : super(key: key);
@@ -1193,7 +1192,9 @@ class _DetailPageState extends State<DetailPage> {
                   size: 50,
                 ),
                 color: Colors.white,
-                onPressed: () {},
+                onPressed: () {
+                  print("play");
+                },
               ),
             ),
           ],

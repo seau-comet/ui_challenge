@@ -8,7 +8,11 @@ class FlipTrekkingEnterAnimation {
             curve: Interval(0, 0.2, curve: Curves.easeIn),
           ),
         ),
-        avatarSize = Tween<double>(begin: 0, end: 1).animate(
+        meanAnimation = Tween(begin: Offset(1, 0), end: Offset(0, 0)).animate(
+            CurvedAnimation(
+                curve: Interval(0.3, 0.6, curve: Curves.elasticOut),
+                parent: controller)),
+        avatarSize = Tween<double>(begin: 0, end: 0.9).animate(
           CurvedAnimation(
             parent: controller,
             curve: Interval(0.3, 0.6, curve: Curves.elasticOut),
@@ -39,5 +43,6 @@ class FlipTrekkingEnterAnimation {
   final Animation<double> titleOpacity;
   final Animation<double> textOpacity;
   final Animation<double> imageOpacity;
+  final Animation<Offset> meanAnimation;
 //final Animation<double> contactOpacity;
 }
